@@ -3,25 +3,33 @@ import Search from "./Search";
 
 export default function Header({ cartItems }) {
   return (
-    <nav className="navbar row">
-      <div className="col-12 col-md-3">
-        <div className="navbar-brand">
+    <nav className="navbar bg-yellow">
+      <div className="container d-flex align-items-center justify-content-between">
+        {/* Logo Section */}
+        <div className="logo">
           <Link to="/">
             <img width="150px" src="/images/logo.png" alt="Logo" />
           </Link>
         </div>
-      </div>
 
-      <div className="col-12 col-md-6 mt-2 mt-md-0">
-        <Search />
-      </div>
+        {/* Search Bar */}
+        <div className="search-bar w-50">
+          <Search />
+        </div>
 
-      <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-        <Link to="/cart" className="mr-3">
-          <span id="cart">Cart</span>
-          <span className="ml-1" id="cart_count">{cartItems.length}</span>
-        </Link>
-        
+        {/* Navigation Links */}
+        <div className="nav-links d-flex">
+          <Link to="/about" className="text-white mx-3">About Us</Link>
+          <Link to="/contact" className="text-white mx-3">Contact Us</Link>
+        </div>
+
+        {/* Cart Section */}
+        <div className="cart d-flex align-items-center">
+          <Link to="/cart" className="text-white">
+            <span id="cart" className="ml-3">Cart</span>
+            <span className="ml-2" id="cart_count">{cartItems.length}</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );
