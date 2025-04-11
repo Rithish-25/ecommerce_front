@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/Home';
 import Header from './components/Header';
-import Footer from './components/Footer';
+//import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductDetail from './pages/ProductDetail';
 import { useState } from 'react';
@@ -48,9 +48,11 @@ function App() {
        
         </Routes>
       </Router>
-      <Footer />
+
     </div>
   );
 }
 
 export default App;
+
+/* in line no 51 we can add footer also*/

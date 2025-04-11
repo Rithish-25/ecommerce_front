@@ -8,7 +8,7 @@ export default function Header({ cartItems }) {
         {/* Logo Section */}
         <div className="logo">
           <Link to="/home">
-            <img width="150px" src="/images/logo.png" alt="Logo" />
+            <img width="160px" src="/images/logo.png" alt="Logo" />
           </Link>
         </div>
 
@@ -20,7 +20,7 @@ export default function Header({ cartItems }) {
         {/* Navigation Links */}
         <div className="nav-links d-flex">
           <Link to="/about" className="text-white mx-3">About Us</Link>
-          <Link to="/contact" className="text-white mx-3">Contact Us</Link>
+          
         </div>
 
         {/* Cart Section */}
