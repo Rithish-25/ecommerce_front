@@ -26,7 +26,6 @@ const Register = () => {
       });
 
       if (response.data.success) {
-        
         setTimeout(() => navigate("/login"), 1000);
       } else {
         setError(response.data.message || "Registration failed.");
@@ -84,7 +83,6 @@ const Register = () => {
               required
               style={styles.input}
             />
-           
             <button type="submit" style={styles.button}>Login</button>
           </form>
         ) : (
@@ -136,20 +134,26 @@ const styles = {
     backgroundImage: "url('/images/products/register.jpg')", 
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", // Modern font
   },
   card: { 
-    background: "#fff", 
+    background: "rgba(255, 255, 255, 0.2)", // semi-transparent background
     padding: "30px", 
-    borderRadius: "10px", 
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", 
-    width: "350px", 
-    textAlign: "center"
+    borderRadius: "15px", 
+    boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", 
+    backdropFilter: "blur(10px)", 
+    WebkitBackdropFilter: "blur(10px)", 
+    border: "1px solid rgba(255, 255, 255, 0.18)", 
+    width: "360px", 
+    textAlign: "center",
+    animation: "fadeIn 1s ease-out"
   },
   title: { 
     marginBottom: "20px", 
-    fontSize: "24px", 
-    color: "#333"
+    fontSize: "26px", 
+    fontWeight: "600",
+    color: "#ffffff"
   },
   form: { 
     display: "flex", 
@@ -160,35 +164,60 @@ const styles = {
     padding: "12px", 
     fontSize: "16px", 
     width: "100%", 
-    borderRadius: "5px", 
-    border: "1px solid #ccc"
+    borderRadius: "8px", 
+    border: "1px solid #ccc", 
+    transition: "all 0.3s ease",
+    outline: "none"
   },
   button: { 
     padding: "12px", 
     fontSize: "16px", 
+    fontWeight: "600",
     background: "#007BFF", 
     color: "#fff", 
     border: "none", 
-    borderRadius: "5px", 
+    borderRadius: "8px", 
     cursor: "pointer", 
-    transition: "0.3s"
-  },
-  buttonHover: { 
-    background: "#0056b3" 
+    transition: "all 0.3s ease",
+    animation: "buttonHover 0.5s infinite alternate"
   },
   error: { 
     color: "red", 
-    fontSize: "14px"
+    fontSize: "14px",
+    fontWeight: "500"
   },
   success: { 
-    color: "green", 
-    fontSize: "14px"
+    color: "limegreen", 
+    fontSize: "14px",
+    fontWeight: "500"
   },
   toggle: { 
     marginTop: "15px", 
-    color: "#007BFF", 
+    color: "#ffffff",  // Changed to white
     cursor: "pointer", 
-    textDecoration: "underline"
+    textDecoration: "underline",
+    fontWeight: "500"
+  },
+  '@keyframes fadeIn': {
+    '0%': {
+      opacity: 0,
+      transform: 'translateY(-20px)',
+    },
+    '100%': {
+      opacity: 1,
+      transform: 'translateY(0)',
+    }
+  },
+  '@keyframes buttonHover': {
+    '0%': {
+      backgroundColor: '#007BFF',
+    },
+    '50%': {
+      backgroundColor: '#0056b3',
+    },
+    '100%': {
+      backgroundColor: '#007BFF',
+    }
   }
 };
 

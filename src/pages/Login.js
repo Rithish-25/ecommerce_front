@@ -13,7 +13,10 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/login", { email, phone });
+      const response = await axios.post("http://localhost:8000/api/v1/login", {
+        email,
+        phone,
+      });
 
       console.log("API Response:", response.data);
 
@@ -31,10 +34,33 @@ const Login = () => {
 
   return (
     <div style={styles.container}>
+      <style>
+        {`
+          @keyframes fadeInBackground {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+          }
+
+          @keyframes zoomIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+          }
+
+          @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+
+          @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 123, 255, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(0, 123, 255, 0.9); }
+            100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 123, 255, 0.7); }
+          }
+        `}
+      </style>
       <div style={styles.card}>
         <h2 style={styles.title}>Login</h2>
         {error && <p style={styles.error}>{error}</p>}
-
         <form onSubmit={handleLogin} style={styles.form}>
           <input
             type="email"
@@ -59,59 +85,70 @@ const Login = () => {
   );
 };
 
-// CSS Styles
 const styles = {
-  container: { 
-    display: "flex", 
-    justifyContent: "center", 
-    alignItems: "center", 
-    height: "100vh", 
-    backgroundImage: "url('/images/products/login.jpg')", // Background image
-    backgroundSize: "cover", // Cover full background
-    backgroundPosition: "center", // Center the image
-    backgroundRepeat: "no-repeat" // No repeating
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    backgroundImage: "url('/images/products/login.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    animation: "fadeInBackground 2s ease-in-out"
   },
-  card: { 
-    background: "#fff", 
-    padding: "30px", 
-    borderRadius: "10px", 
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", 
-    width: "350px", 
-    textAlign: "center"
+  card: {
+    background: "rgba(255, 255, 255, 0.15)",
+    padding: "30px",
+    borderRadius: "15px",
+    boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+    backdropFilter: "blur(12px)",
+    WebkitBackdropFilter: "blur(12px)",
+    border: "1px solid rgba(255, 255, 255, 0.18)",
+    width: "360px",
+    textAlign: "center",
+    animation: "zoomIn 1s ease"
   },
-  title: { 
-    marginBottom: "20px", 
-    fontSize: "24px", 
-    color: "#333"
+  title: {
+    marginBottom: "20px",
+    fontSize: "26px",
+    fontWeight: "600",
+    color: "#ffffff",
+    animation: "fadeIn 1.5s ease-in-out"
   },
-  form: { 
-    display: "flex", 
-    flexDirection: "column", 
+  form: {
+    display: "flex",
+    flexDirection: "column",
     gap: "15px"
   },
-  input: { 
-    padding: "12px", 
-    fontSize: "16px", 
-    width: "100%", 
-    borderRadius: "5px", 
-    border: "1px solid #ccc"
+  input: {
+    padding: "12px",
+    fontSize: "16px",
+    width: "100%",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    transition: "all 0.3s ease",
+    outline: "none",
+    animation: "slideIn 0.8s ease forwards",
+    opacity: 0
   },
-  button: { 
-    padding: "12px", 
-    fontSize: "16px", 
-    background: "#007BFF", 
-    color: "#fff", 
-    border: "none", 
-    borderRadius: "5px", 
-    cursor: "pointer", 
-    transition: "0.3s"
+  button: {
+    padding: "12px",
+    fontSize: "16px",
+    fontWeight: "600",
+    background: "#007BFF",
+    color: "#fff",
+    border: "none",
+    borderRadius: "8px",
+    cursor: "pointer",
+    transition: "all 0.3s ease",
+    //animation: "pulse 2s infinite"
   },
-  buttonHover: { 
-    background: "#0056b3" 
-  },
-  error: { 
-    color: "red", 
-    fontSize: "14px"
+  error: {
+    color: "red",
+    fontSize: "14px",
+    fontWeight: "500"
   }
 };
 
