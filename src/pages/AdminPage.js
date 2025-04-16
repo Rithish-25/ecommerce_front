@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AdminPage = () => {
     const [products, setProducts] = useState([]);
@@ -26,22 +28,24 @@ const AdminPage = () => {
 
     const addProduct = async () => {
         const { name, price, description, ratings, images, category, seller, stock } = newProduct;
-    
-        // Check for empty fields
+
         if (!name || !price || !description || !ratings || !images[0].image || !category || !seller || !stock) {
             alert("Please fill in all the fields before adding a product.");
             return;
         }
-    
+
         try {
             const res = await axios.post('http://localhost:8000/api/v1/admin/products', newProduct);
             setProducts([...products, res.data.product]);
             clearForm();
+
+            toast.success("Product added successfully!", {
+                icon: <span style={{ color: '#00e676', fontSize: '18px' }}>✔️</span>
+            });
         } catch (error) {
             console.log(error.response?.data || error.message);
         }
     };
-    
 
     const deleteProduct = async (id) => {
         try {
@@ -87,6 +91,27 @@ const AdminPage = () => {
     return (
         <div className="admin-wrapper">
             <h2>🛠️ Admin Dashboard - Manage Products</h2>
+
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                toastStyle={{
+                    background: "#121212",
+                    color: "#fff",
+                    borderRadius: "8px",
+                }}
+                progressStyle={{
+                    background: "#00e676",
+                }}
+            />
 
             <div className="form-container glass">
                 <div className="form-grid">
