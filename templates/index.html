@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JVLcart</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/amazon-ember"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+  <body>
+    <nav classNamename="navbar row">
+      <div classNamename="col-12 col-md-3">
+        <div classNamename="navbar-brand">
+          <img width="150px" src="./images/logo.png" />
+        </div>
+      </div>
+
+      <div classNamename="col-12 col-md-6 mt-2 mt-md-0">
+        <div classNamename="input-group">
+          <input
+            type="text"
+            id="search_field"
+            classNamename="form-control"
+            placeholder="Enter Product Name ..."
+          />
+          <div classNamename="input-group-append">
+            <button id="search_btn" classNamename="btn">
+              <i classNamename="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div classNamename="col-12 col-md-3 mt-4 mt-md-0 text-center">
+        <span id="cart" classNamename="ml-3">Cart</span>
+        <span classNamename="ml-1" id="cart_count">2</span>
+      </div>
+    </nav>
+
+    <h1 id="products_heading">Latest Products</h1>
+
+    <section id="products" classNamename="container mt-5">
+      <div classNamename="row">
+        <div classNamename="col-sm-12 col-md-6 col-lg-3 my-3">
+          <div classNamename="card p-3 rounded">
+            <img
+              classNamename="card-img-top mx-auto"
+              src="./images/products/1.jpg"
+            />
+            <div classNamename="card-body d-flex flex-column">
+              <h5 classNamename="card-title">
+                <a href="">OPPO F21s Pro 5G (Dawnlight Gold, 8GB RAM, 128 Storage) with No Cost EMI/Additional Exchange Offers</a>
+              </h5>
+              <div classNamename="ratings mt-auto">
+                <div classNamename="rating-outer">
+                  <div classNamename="rating-inner"></div>
+                </div>
+              </div>
+              <p classNamename="card-text">$245.67</p>
+              <a href="#" id="view_btn" classNamename="btn btn-block">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div classNamename="col-sm-12 col-md-6 col-lg-3 my-3">
+          <div classNamename="card p-3 rounded">
+            <img
+              classNamename="card-img-top mx-auto"
+              src="./images/products/2.jpg"
+            />
+            <div classNamename="card-body d-flex flex-column">
+              <h5 classNamename="card-title">
+                <a href=""
+                  >WRISTIO HD, Bluetooth Calling Smart Watch, 15 days battery life, Water Resistant</a
+                >
+              </h5>
+              <div classNamename="ratings mt-auto">
+               <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star-half-o"></i>
+                <i classNamename="fa fa-star-o"></i>
+                <span id="no_of_reviews">(5 Reviews)</span>
+              </div>
+              <p classNamename="card-text">$150.32</p>
+              <a href="#" id="view_btn" classNamename="btn btn-block">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div classNamename="col-sm-12 col-md-6 col-lg-3 my-3">
+          <div classNamename="card p-3 rounded">
+            <img
+              classNamename="card-img-top mx-auto"
+              src="./images/products/3.jpg"
+            />
+            <div classNamename="card-body d-flex flex-column">
+              <h5 classNamename="card-title">
+                <a href=""
+                  >Dell Inspiron 3511 Laptop, Intel i3-1115G4, 8GB, 512GB</a
+                >
+              </h5>
+              <div classNamename="ratings mt-auto">
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star-half-o"></i>
+                <i classNamename="fa fa-star-o"></i>
+                <span id="no_of_reviews">(5 Reviews)</span>
+              </div>
+              <p classNamename="card-text">$440.57</p>
+              <a href="#" id="view_btn" classNamename="btn btn-block">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div classNamename="col-sm-12 col-md-6 col-lg-3 my-3">
+          <div classNamename="card p-3 rounded">
+            <img
+              classNamename="card-img-top mx-auto"
+              src="./images/products/4.jpg"
+            />
+            <div classNamename="card-body d-flex flex-column">
+              <h5 classNamename="card-title">
+                <a href="">PTron Newly Launched Tangent Sports, 60Hrs Playtime</a>
+              </h5>
+              <div classNamename="ratings mt-auto">
+               <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star-half-o"></i>
+                <i classNamename="fa fa-star-o"></i>
+                <span id="no_of_reviews">(5 Reviews)</span>
+              </div>
+              <p classNamename="card-text">$15.46</p>
+
+              <a type="button" href="#" id="view_btn" classNamename="btn btn-block">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div classNamename="col-sm-12 col-md-6 col-lg-3 my-3">
+          <div classNamename="card p-3 rounded">
+            <img
+              classNamename="card-img-top mx-auto"
+              src="./images/products/5.jpg"
+            />
+            <div classNamename="card-body d-flex flex-column">
+              <h5 classNamename="card-title">
+                <a href="">Campus Men's Maxico Running Shoes</a>
+              </h5>
+              <div classNamename="ratings mt-auto">
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star"></i>
+                <i classNamename="fa fa-star-half-o"></i>
+                <i classNamename="fa fa-star-o"></i>
+                <span id="no_of_reviews">(5 Reviews)</span>
+              </div>
+              <p classNamename="card-text">$10.12</p>
+              <a href="#" id="view_btn" classNamename="btn btn-block">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer classNamename="py-1 bg-dark">
+      <p classNamename="text-center text-white mt-1 ">
+        JVLcart - 2023-2024, All Rights Reserved
+      </p>
+    </footer>
+
+    <script type="text/javascript">
+      const stars = 5;
+      const rating = 4.5;
+
+      const starPercentage = `${(rating / stars) * 100}%`;
+
+      document.querySelector(`.rating-inner`).style.width = starPercentage; 
+
+    </script>
+  </body>
+</html>
